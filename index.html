@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Logiflo.io — Intelligence Logistique pour PME</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--navy:#0B2545;--navy3:#162d52;--green:#00C896;--slate:#4A6080;--light:#A8C8E8;--gold:#B45309;--purple:#6D28D9;--teal:#047857;--white:#fff}
+html{font-size:16px;-webkit-text-size-adjust:100%}
+body{font-family:'DM Sans',sans-serif;background:var(--navy);color:var(--white);overflow-x:hidden;min-height:100vh}
+.topbar,.bottombar{background:var(--green);height:5px;width:100%}
+.page{width:100%;max-width:860px;margin:0 auto;padding:clamp(1rem,4vw,2rem) clamp(1rem,4vw,1.8rem) clamp(1.5rem,5vw,2.5rem)}
+header{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:.8rem;margin-bottom:1.4rem}
+.logo{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(1.8rem,6vw,2.8rem);line-height:1;letter-spacing:-1px}
+.logo span{color:var(--green)}
+.tagline{font-size:clamp(.72rem,2vw,.88rem);color:var(--light);margin-top:.3rem;font-weight:300}
+.divider{height:1px;background:linear-gradient(90deg,var(--green),transparent);margin:.9rem 0;opacity:.35}
+.hero{margin-bottom:1.4rem}
+.hero h1{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(1.05rem,3vw,1.55rem);line-height:1.35;margin-bottom:.55rem}
+.hero h1 em{font-style:normal;color:var(--green)}
+.hero p{font-size:clamp(.78rem,1.8vw,.9rem);color:var(--light);line-height:1.7;font-weight:300}
+.stitle{font-family:'Syne',sans-serif;font-weight:700;font-size:.66rem;letter-spacing:2px;text-transform:uppercase;color:var(--green);margin-bottom:.65rem}
+.modules{display:grid;grid-template-columns:repeat(3,1fr);gap:.75rem;margin-bottom:1.4rem}
+@media(max-width:560px){.modules{grid-template-columns:1fr}}
+.mod{background:var(--navy3);border-radius:10px;padding:.9rem 1rem;border-top:3px solid var(--green);min-width:0}
+.mod-icon{font-size:1.2rem;margin-bottom:.4rem;display:block}
+.mod-title{font-family:'Syne',sans-serif;font-weight:700;font-size:.7rem;letter-spacing:1.5px;text-transform:uppercase;color:var(--green);margin-bottom:.4rem}
+.mod-desc{font-size:.75rem;color:var(--light);line-height:1.6;font-weight:300}
+.mod-desc strong{color:var(--white);font-weight:500}
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:.6rem;margin-bottom:1.4rem;background:rgba(0,200,150,.04);border:1px solid rgba(0,200,150,.12);border-radius:12px;padding:1rem .8rem}
+@media(max-width:480px){.kpis{grid-template-columns:repeat(2,1fr)}}
+.kpi{text-align:center;min-width:0}
+.kpi-v{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(1.1rem,3.5vw,1.7rem);color:var(--green);line-height:1;display:block;margin-bottom:.2rem}
+.kpi-l{font-size:.66rem;color:var(--light);line-height:1.4;font-weight:300}
+.why{margin-bottom:1.4rem}
+.why-list{list-style:none;display:flex;flex-direction:column;gap:.4rem}
+.why-list li{display:flex;gap:.6rem;align-items:flex-start;font-size:.79rem;color:var(--light);line-height:1.55;font-weight:300}
+.why-list li::before{content:'→';color:var(--green);font-weight:700;flex-shrink:0;margin-top:.05rem}
+.why-list strong{color:var(--white);font-weight:500}
+.plans{display:grid;grid-template-columns:repeat(4,1fr);gap:.6rem;margin-bottom:1.4rem}
+@media(max-width:560px){.plans{grid-template-columns:repeat(2,1fr)}}
+.plan{background:var(--navy3);border-radius:9px;padding:.85rem .75rem;text-align:center;border-top:3px solid currentColor;min-width:0}
+.plan.free{color:var(--slate)}.plan.start{color:var(--purple)}.plan.biz{color:var(--teal)}.plan.expert{color:var(--gold)}
+.plan-name{font-family:'Syne',sans-serif;font-weight:700;font-size:.7rem;letter-spacing:.8px;text-transform:uppercase;color:var(--white);margin-bottom:.2rem}
+.plan-price{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(.8rem,2vw,.9rem);margin-bottom:.35rem}
+.plan-desc{font-size:.64rem;color:var(--light);line-height:1.5;font-weight:300}
+.contact{background:rgba(0,200,150,.06);border:1px solid rgba(0,200,150,.18);border-radius:12px;padding:1rem 1.2rem;display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:.6rem .9rem}
+.contact-label{font-size:.6rem;color:var(--slate);text-transform:uppercase;letter-spacing:1px;margin-bottom:.15rem;font-weight:500}
+.contact-val{font-family:'Syne',sans-serif;font-weight:600;font-size:.77rem;color:var(--white);word-break:break-word}
+.contact-val a{color:var(--white);text-decoration:none}
+.contact-val a:hover{color:var(--green);text-decoration:underline}
+@media print{body{background:#0B2545!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}.page{padding:.8rem 1rem 1rem}.modules{grid-template-columns:repeat(3,1fr)!important}.plans{grid-template-columns:repeat(4,1fr)!important}.kpis{grid-template-columns:repeat(4,1fr)!important}}
+</style>
+</head>
+<body>
+<div class="topbar"></div>
+<div class="page">
+  <header>
+    <div>
+      <div class="logo">LOGI<span>FLO</span>.IO</div>
+      <div class="tagline">Plateforme d'Intelligence Logistique &amp; Financière pour PME</div>
+    </div>
+  </header>
+  <div class="divider"></div>
+  <div class="hero">
+    <h1>Votre Excel devient un <em>audit financier complet</em> en 3 minutes.<br>Sans consultant. Sans intégrateur.</h1>
+    <p>Les PME logistiques pilotent à l'aveugle. Logiflo transforme leurs données opérationnelles en diagnostic financier actionnable — scoring sectoriel, prédiction de rupture, rentabilité transport. Directement depuis un fichier Excel ou CSV.</p>
+  </div>
+  <div class="stitle">Ce que fait Logiflo</div>
+  <div class="modules">
+    <div class="mod"><span class="mod-icon">📦</span><div class="mod-title">Audit Stock</div><div class="mod-desc"><strong>Capital immobilisé · Ruptures · Stock dormant</strong><br>BFR chiffré · Prédiction rupture 4 semaines · Scoring 0–100</div></div>
+    <div class="mod"><span class="mod-icon">🚚</span><div class="mod-title">Audit Transport</div><div class="mod-desc"><strong>Marge nette par trajet · Trajets toxiques</strong><br>Coût/km vs CNR 2026 · Fuite de marge chiffrée · Mode auto-détecté</div></div>
+    <div class="mod"><span class="mod-icon">📊</span><div class="mod-title">Scoring Logiflo</div><div class="mod-desc"><strong>Score 0–100 sur 3 dimensions pondérées</strong><br>Historique · Benchmark sectoriel · PDF 5 pages · SMLA annuel</div></div>
+  </div>
+  <div class="kpis">
+    <div class="kpi"><span class="kpi-v">65 000</span><span class="kpi-l">PME transport &amp;<br>logistique en France</span></div>
+    <div class="kpi"><span class="kpi-v">3 min</span><span class="kpi-l">Excel → audit<br>financier complet</span></div>
+    <div class="kpi"><span class="kpi-v">0 EUR</span><span class="kpi-l">Pour tester<br>(audit gratuit)</span></div>
+    <div class="kpi"><span class="kpi-v">16</span><span class="kpi-l">Secteurs avec<br>benchmarks intégrés</span></div>
+  </div>
+  <div class="why">
+    <div class="stitle">Pourquoi maintenant</div>
+    <ul class="why-list">
+      <li>Coûts logistiques en hausse de <strong>+10 à +15% en Europe</strong> en 2025 — les PME absorbent sans visibilité (Baromètre Kyu, 500 directeurs SC)</li>
+      <li><strong>64% des industriels</strong> ont réorganisé leur supply chain sans savoir ce que ça leur a coûté ou économisé (Rapport Alpega 2026)</li>
+      <li>Aucun outil accessible &lt; 500 EUR/mois avec <strong>benchmarks CNR/IRU/IATA intégrés et scoring propriétaire</strong> pour PME logistiques</li>
+    </ul>
+  </div>
+  <div class="stitle">Offres</div>
+  <div class="plans">
+    <div class="plan free"><div class="plan-name">Gratuit</div><div class="plan-price">0 EUR</div><div class="plan-desc">1 audit/semaine<br>Sans compte<br>Rapport tronqué (30%)</div></div>
+    <div class="plan start"><div class="plan-name">Starter</div><div class="plan-price">290 EUR/mois</div><div class="plan-desc">3 audits/mois · 1 module<br>1 login Manager<br>PDF complet</div></div>
+    <div class="plan biz"><div class="plan-name">Business</div><div class="plan-price">490 EUR/mois</div><div class="plan-desc">Illimité · 2 modules<br>3 profils DAF/Terrain<br>Historique 6 mois</div></div>
+    <div class="plan expert"><div class="plan-name">Expert</div><div class="plan-price">Sur devis</div><div class="plan-desc">Multi-sites · API<br>4 niveaux · SMLA<br>En développement</div></div>
+  </div>
+  <div class="contact">
+    <div><div class="contact-label">Fondateur</div><div class="contact-val">Éric Loboué</div></div>
+    <div><div class="contact-label">Email</div><div class="contact-val"><a href="mailto:ericloboue@outlook.fr">ericloboue@outlook.fr</a></div></div>
+    <div><div class="contact-label">App live</div><div class="contact-val"><a href="https://logiflo-io.streamlit.app" target="_blank">logiflo-io.streamlit.app</a></div></div>
+    <div><div class="contact-label">LinkedIn</div><div class="contact-val"><a href="https://linkedin.com/in/ericloboue" target="_blank">Éric Loboué</a></div></div>
+  </div>
+</div>
+<div class="bottombar"></div>
+</body>
+</html>
