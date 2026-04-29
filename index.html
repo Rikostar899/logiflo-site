@@ -12,15 +12,21 @@ html{font-size:16px;-webkit-text-size-adjust:100%}
 body{font-family:'DM Sans',sans-serif;background:var(--navy);color:var(--white);overflow-x:hidden;min-height:100vh}
 .topbar,.bottombar{background:var(--green);height:5px;width:100%}
 .page{width:100%;max-width:860px;margin:0 auto;padding:clamp(1rem,4vw,2rem) clamp(1rem,4vw,1.8rem) clamp(1.5rem,5vw,2.5rem)}
-header{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:.8rem;margin-bottom:1.4rem}
+header{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.8rem;margin-bottom:1.4rem}
+.logo-block{display:flex;flex-direction:column}
 .logo{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(1.8rem,6vw,2.8rem);line-height:1;letter-spacing:-1px}
 .logo span{color:var(--green)}
 .tagline{font-size:clamp(.72rem,2vw,.88rem);color:var(--light);margin-top:.3rem;font-weight:300}
+.login-link{font-family:'Syne',sans-serif;font-weight:600;font-size:.78rem;color:var(--light);text-decoration:none;padding:.45rem .9rem;border:1px solid rgba(255,255,255,.25);border-radius:8px;transition:all .2s;white-space:nowrap;flex-shrink:0}
+.login-link:hover{background:var(--white);color:var(--navy);border-color:var(--white)}
 .divider{height:1px;background:linear-gradient(90deg,var(--green),transparent);margin:.9rem 0;opacity:.35}
 .hero{margin-bottom:1.4rem}
 .hero h1{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(1.05rem,3vw,1.55rem);line-height:1.35;margin-bottom:.55rem}
 .hero h1 em{font-style:normal;color:var(--green)}
 .hero p{font-size:clamp(.78rem,1.8vw,.9rem);color:var(--light);line-height:1.7;font-weight:300}
+.cta-btn{padding:.85rem 1.4rem;border-radius:10px;font-family:'Syne',sans-serif;font-weight:700;font-size:.85rem;text-align:center;text-decoration:none;letter-spacing:.5px;transition:transform .2s,box-shadow .2s;display:inline-flex;align-items:center;justify-content:center;gap:.4rem}
+.cta-primary{background:var(--green);color:var(--navy);box-shadow:0 4px 14px rgba(0,200,150,.3)}
+.cta-primary:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(0,200,150,.45)}
 .stitle{font-family:'Syne',sans-serif;font-weight:700;font-size:.66rem;letter-spacing:2px;text-transform:uppercase;color:var(--green);margin-bottom:.65rem}
 .modules{display:grid;grid-template-columns:repeat(3,1fr);gap:.75rem;margin-bottom:1.4rem}
 @media(max-width:560px){.modules{grid-template-columns:1fr}}
@@ -46,22 +52,26 @@ header{display:flex;align-items:flex-start;justify-content:space-between;flex-wr
 .plan-name{font-family:'Syne',sans-serif;font-weight:700;font-size:.7rem;letter-spacing:.8px;text-transform:uppercase;color:var(--white);margin-bottom:.2rem}
 .plan-price{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(.8rem,2vw,.9rem);margin-bottom:.35rem}
 .plan-desc{font-size:.64rem;color:var(--light);line-height:1.5;font-weight:300}
+.cta-bottom{text-align:center;margin:1.6rem 0 1.4rem;padding:1.2rem;background:rgba(0,200,150,.06);border:1px solid rgba(0,200,150,.18);border-radius:12px}
+.cta-bottom-title{font-family:'Syne',sans-serif;font-weight:800;font-size:1.1rem;color:var(--white);margin-bottom:.4rem}
+.cta-bottom-sub{font-size:.78rem;color:var(--light);margin-bottom:1rem;font-weight:300}
 .contact{background:rgba(0,200,150,.06);border:1px solid rgba(0,200,150,.18);border-radius:12px;padding:1rem 1.2rem;display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:.6rem .9rem}
 .contact-label{font-size:.6rem;color:var(--slate);text-transform:uppercase;letter-spacing:1px;margin-bottom:.15rem;font-weight:500}
 .contact-val{font-family:'Syne',sans-serif;font-weight:600;font-size:.77rem;color:var(--white);word-break:break-word}
 .contact-val a{color:var(--white);text-decoration:none}
 .contact-val a:hover{color:var(--green);text-decoration:underline}
-@media print{body{background:#0B2545!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}.page{padding:.8rem 1rem 1rem}.modules{grid-template-columns:repeat(3,1fr)!important}.plans{grid-template-columns:repeat(4,1fr)!important}.kpis{grid-template-columns:repeat(4,1fr)!important}}
+@media print{body{background:#0B2545!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}.page{padding:.8rem 1rem 1rem}.cta-bottom,.login-link{display:none}.modules{grid-template-columns:repeat(3,1fr)!important}.plans{grid-template-columns:repeat(4,1fr)!important}.kpis{grid-template-columns:repeat(4,1fr)!important}}
 </style>
 </head>
 <body>
 <div class="topbar"></div>
 <div class="page">
   <header>
-    <div>
+    <div class="logo-block">
       <div class="logo">LOGI<span>FLO</span>.IO</div>
       <div class="tagline">Plateforme d'Intelligence Logistique &amp; Financière pour PME</div>
     </div>
+    <a href="https://app.logiflo.io" class="login-link">Se connecter</a>
   </header>
   <div class="divider"></div>
   <div class="hero">
@@ -95,10 +105,15 @@ header{display:flex;align-items:flex-start;justify-content:space-between;flex-wr
     <div class="plan biz"><div class="plan-name">Business</div><div class="plan-price">490 EUR/mois</div><div class="plan-desc">Illimité · 2 modules<br>3 profils DAF/Terrain<br>Historique 6 mois</div></div>
     <div class="plan expert"><div class="plan-name">Expert</div><div class="plan-price">Sur devis</div><div class="plan-desc">Multi-sites · API<br>4 niveaux · SMLA<br>En développement</div></div>
   </div>
+  <div class="cta-bottom">
+    <div class="cta-bottom-title">Prêt à voir ce que vos données vous cachent ?</div>
+    <div class="cta-bottom-sub">3 minutes. Sans inscription. Sans engagement.</div>
+    <a href="https://app.logiflo.io/?page=audit_gratuit" class="cta-btn cta-primary" style="display:inline-flex;min-width:240px;">▶ Lancer mon audit gratuit</a>
+  </div>
   <div class="contact">
     <div><div class="contact-label">Fondateur</div><div class="contact-val">Éric Loboué</div></div>
-    <div><div class="contact-label">Email</div><div class="contact-val"><a href="mailto:ericloboue@outlook.fr">ericloboue@outlook.fr</a></div></div>
-    <div><div class="contact-label">App live</div><div class="contact-val"><a href="https://logiflo-io.streamlit.app" target="_blank">logiflo-io.streamlit.app</a></div></div>
+    <div><div class="contact-label">Email</div><div class="contact-val"><a href="mailto:contact@logiflo.io">contact@logiflo.io</a></div></div>
+    <div><div class="contact-label">App live</div><div class="contact-val"><a href="https://app.logiflo.io" target="_blank">app.logiflo.io</a></div></div>
     <div><div class="contact-label">LinkedIn</div><div class="contact-val"><a href="https://linkedin.com/in/ericloboue" target="_blank">Éric Loboué</a></div></div>
   </div>
 </div>
