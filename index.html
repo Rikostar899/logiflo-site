@@ -2,122 +2,307 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Logiflo.io — Intelligence Logistique pour PME</title>
-<meta name="google-site-verification" content="D5U_aBZdyclEv17U6jiOt8LbAjRbvQe5TA4eJjN6XPc" />
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Logiflo.io — Votre stock cache du cash</title>
+<meta name="description" content="Logiflo transforme votre fichier d'inventaire en audit financier. 3 minutes, sans integration, sans consultant.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📦</text></svg>">
 <style>
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{--navy:#0B2545;--navy3:#162d52;--green:#00C896;--slate:#4A6080;--light:#A8C8E8;--gold:#B45309;--purple:#6D28D9;--teal:#047857;--white:#fff}
-html{font-size:16px;-webkit-text-size-adjust:100%}
-body{font-family:'DM Sans',sans-serif;background:var(--navy);color:var(--white);overflow-x:hidden;min-height:100vh}
-.topbar,.bottombar{background:var(--green);height:5px;width:100%}
-.page{width:100%;max-width:860px;margin:0 auto;padding:clamp(1rem,4vw,2rem) clamp(1rem,4vw,1.8rem) clamp(1.5rem,5vw,2.5rem)}
-header{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.8rem;margin-bottom:1.4rem}
-.logo-block{display:flex;flex-direction:column}
-.logo{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(1.8rem,6vw,2.8rem);line-height:1;letter-spacing:-1px}
-.logo span{color:var(--green)}
-.tagline{font-size:clamp(.72rem,2vw,.88rem);color:var(--light);margin-top:.3rem;font-weight:300}
-.login-link{font-family:'Syne',sans-serif;font-weight:600;font-size:.78rem;color:var(--light);text-decoration:none;padding:.45rem .9rem;border:1px solid rgba(255,255,255,.25);border-radius:8px;transition:all .2s;white-space:nowrap;flex-shrink:0}
-.login-link:hover{background:var(--white);color:var(--navy);border-color:var(--white)}
-.divider{height:1px;background:linear-gradient(90deg,var(--green),transparent);margin:.9rem 0;opacity:.35}
-.hero{margin-bottom:1.4rem}
-.hero h1{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(1.05rem,3vw,1.55rem);line-height:1.35;margin-bottom:.55rem}
-.hero h1 em{font-style:normal;color:var(--green)}
-.hero p{font-size:clamp(.78rem,1.8vw,.9rem);color:var(--light);line-height:1.7;font-weight:300}
-.cta-btn{padding:.85rem 1.4rem;border-radius:10px;font-family:'Syne',sans-serif;font-weight:700;font-size:.85rem;text-align:center;text-decoration:none;letter-spacing:.5px;transition:transform .2s,box-shadow .2s;display:inline-flex;align-items:center;justify-content:center;gap:.4rem}
-.cta-primary{background:var(--green);color:var(--navy);box-shadow:0 4px 14px rgba(0,200,150,.3)}
-.cta-primary:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(0,200,150,.45)}
-.stitle{font-family:'Syne',sans-serif;font-weight:700;font-size:.66rem;letter-spacing:2px;text-transform:uppercase;color:var(--green);margin-bottom:.65rem}
-.modules{display:grid;grid-template-columns:repeat(3,1fr);gap:.75rem;margin-bottom:1.4rem}
-@media(max-width:560px){.modules{grid-template-columns:1fr}}
-.mod{background:var(--navy3);border-radius:10px;padding:.9rem 1rem;border-top:3px solid var(--green);min-width:0}
-.mod-icon{font-size:1.2rem;margin-bottom:.4rem;display:block}
-.mod-title{font-family:'Syne',sans-serif;font-weight:700;font-size:.7rem;letter-spacing:1.5px;text-transform:uppercase;color:var(--green);margin-bottom:.4rem}
-.mod-desc{font-size:.75rem;color:var(--light);line-height:1.6;font-weight:300}
-.mod-desc strong{color:var(--white);font-weight:500}
-.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:.6rem;margin-bottom:1.4rem;background:rgba(0,200,150,.04);border:1px solid rgba(0,200,150,.12);border-radius:12px;padding:1rem .8rem}
-@media(max-width:480px){.kpis{grid-template-columns:repeat(2,1fr)}}
-.kpi{text-align:center;min-width:0}
-.kpi-v{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(1.1rem,3.5vw,1.7rem);color:var(--green);line-height:1;display:block;margin-bottom:.2rem}
-.kpi-l{font-size:.66rem;color:var(--light);line-height:1.4;font-weight:300}
-.why{margin-bottom:1.4rem}
-.why-list{list-style:none;display:flex;flex-direction:column;gap:.4rem}
-.why-list li{display:flex;gap:.6rem;align-items:flex-start;font-size:.79rem;color:var(--light);line-height:1.55;font-weight:300}
-.why-list li::before{content:'→';color:var(--green);font-weight:700;flex-shrink:0;margin-top:.05rem}
-.why-list strong{color:var(--white);font-weight:500}
-.plans{display:grid;grid-template-columns:repeat(4,1fr);gap:.6rem;margin-bottom:1.4rem}
-@media(max-width:560px){.plans{grid-template-columns:repeat(2,1fr)}}
-.plan{background:var(--navy3);border-radius:9px;padding:.85rem .75rem;text-align:center;border-top:3px solid currentColor;min-width:0}
-.plan.free{color:var(--slate)}.plan.start{color:var(--purple)}.plan.biz{color:var(--teal)}.plan.expert{color:var(--gold)}
-.plan-name{font-family:'Syne',sans-serif;font-weight:700;font-size:.7rem;letter-spacing:.8px;text-transform:uppercase;color:var(--white);margin-bottom:.2rem}
-.plan-price{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(.8rem,2vw,.9rem);margin-bottom:.35rem}
-.plan-desc{font-size:.64rem;color:var(--light);line-height:1.5;font-weight:300}
-.cta-bottom{text-align:center;margin:1.6rem 0 1.4rem;padding:1.2rem;background:rgba(0,200,150,.06);border:1px solid rgba(0,200,150,.18);border-radius:12px}
-.cta-bottom-title{font-family:'Syne',sans-serif;font-weight:800;font-size:1.1rem;color:var(--white);margin-bottom:.4rem}
-.cta-bottom-sub{font-size:.78rem;color:var(--light);margin-bottom:1rem;font-weight:300}
-.contact{background:rgba(0,200,150,.06);border:1px solid rgba(0,200,150,.18);border-radius:12px;padding:1rem 1.2rem;display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:.6rem .9rem}
-.contact-label{font-size:.6rem;color:var(--slate);text-transform:uppercase;letter-spacing:1px;margin-bottom:.15rem;font-weight:500}
-.contact-val{font-family:'Syne',sans-serif;font-weight:600;font-size:.77rem;color:var(--white);word-break:break-word}
-.contact-val a{color:var(--white);text-decoration:none}
-.contact-val a:hover{color:var(--green);text-decoration:underline}
-@media print{body{background:#0B2545!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}.page{padding:.8rem 1rem 1rem}.cta-bottom,.login-link{display:none}.modules{grid-template-columns:repeat(3,1fr)!important}.plans{grid-template-columns:repeat(4,1fr)!important}.kpis{grid-template-columns:repeat(4,1fr)!important}}
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+:root{--n:#0B2545;--n2:#0f2f5a;--g:#00C896;--gd:#00A87A;--s:#4A6080;--l:#F0F4F8;--w:#fff;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Poppins',sans-serif;color:var(--n);background:var(--w);-webkit-font-smoothing:antialiased;}
+a{text-decoration:none;color:inherit;}
+img{max-width:100%;}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;height:64px;background:rgba(11,37,69,0.97);backdrop-filter:blur(14px);display:flex;align-items:center;justify-content:space-between;padding:0 6%;z-index:100;border-bottom:1px solid rgba(255,255,255,0.05);}
+.nav-logo{font-size:22px;font-weight:900;color:#fff;letter-spacing:0.5px;}
+.nav-logo span{color:var(--g);}
+.nav-links{display:flex;gap:28px;align-items:center;}
+.nav-links a{font-size:13px;color:rgba(255,255,255,0.6);font-weight:500;transition:color 0.2s;}
+.nav-links a:hover{color:var(--g);}
+.nav-cta{background:var(--g);color:var(--n);padding:9px 24px;border-radius:8px;font-size:13px;font-weight:700;transition:all 0.2s;}
+.nav-cta:hover{background:var(--gd);transform:translateY(-1px);}
+@media(max-width:768px){.nav-links{display:none;}}
+
+/* HERO */
+.hero{background:linear-gradient(160deg,var(--n) 0%,var(--n2) 100%);padding:140px 6% 100px;text-align:center;position:relative;}
+.hero::after{content:'';position:absolute;bottom:-1px;left:0;right:0;height:80px;background:linear-gradient(transparent,var(--w));}
+.hero-tag{display:inline-block;background:rgba(0,200,150,0.12);color:var(--g);padding:6px 18px;border-radius:20px;font-size:12px;font-weight:600;margin-bottom:24px;letter-spacing:0.5px;}
+.hero h1{font-size:clamp(30px,5.5vw,56px);font-weight:900;color:#fff;line-height:1.12;max-width:720px;margin:0 auto 20px;}
+.hero h1 em{font-style:normal;color:var(--g);}
+.hero p{font-size:clamp(15px,2vw,19px);color:rgba(255,255,255,0.45);max-width:540px;margin:0 auto 36px;line-height:1.65;}
+.hero-btn{display:inline-block;background:var(--g);color:var(--n);padding:16px 40px;border-radius:10px;font-size:16px;font-weight:800;transition:all 0.25s;box-shadow:0 4px 20px rgba(0,200,150,0.25);}
+.hero-btn:hover{background:var(--gd);transform:translateY(-2px);box-shadow:0 8px 30px rgba(0,200,150,0.35);}
+.hero-sub{margin-top:16px;font-size:12px;color:rgba(255,255,255,0.3);}
+
+/* SECTIONS */
+section{padding:90px 6%;}
+.section-tag{display:inline-block;background:rgba(0,200,150,0.08);color:var(--gd);padding:5px 14px;border-radius:16px;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:14px;}
+.section-title{font-size:clamp(24px,3.5vw,38px);font-weight:800;color:var(--n);margin-bottom:14px;line-height:1.2;}
+.section-sub{font-size:15px;color:var(--s);max-width:580px;line-height:1.7;margin-bottom:44px;}
+.centered{text-align:center;}.centered .section-sub{margin-left:auto;margin-right:auto;}
+
+/* CARDS */
+.grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;max-width:1000px;}
+.centered .grid3{margin:0 auto;}
+.card{background:var(--w);border:1px solid #E2E8F0;border-radius:16px;padding:30px 26px;transition:all 0.25s;}
+.card:hover{border-color:var(--g);transform:translateY(-4px);box-shadow:0 16px 40px rgba(0,0,0,0.06);}
+.card-icon{font-size:30px;margin-bottom:14px;}
+.card h3{font-size:16px;font-weight:700;color:var(--n);margin-bottom:8px;}
+.card p{font-size:13px;color:var(--s);line-height:1.65;}
+
+/* HOW */
+.how{background:var(--n);color:#fff;}
+.how .section-title{color:#fff;}
+.how .section-sub{color:rgba(255,255,255,0.45);}
+.steps{display:flex;gap:28px;flex-wrap:wrap;max-width:1000px;margin:0 auto;}
+.step{flex:1;min-width:240px;text-align:center;padding:28px 20px;}
+.step-num{width:48px;height:48px;border-radius:50%;background:var(--g);color:var(--n);font-size:20px;font-weight:800;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;}
+.step h4{font-size:16px;font-weight:700;margin-bottom:8px;}
+.step p{font-size:12px;color:rgba(255,255,255,0.45);line-height:1.65;}
+
+/* PROFILES */
+.profiles{display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:800px;}
+@media(max-width:640px){.profiles{grid-template-columns:1fr;}}
+.profile{border:2px solid #E2E8F0;border-radius:16px;padding:32px 28px;transition:all 0.2s;}
+.profile:hover{border-color:var(--g);transform:translateY(-3px);}
+.profile.mgr{border-top:4px solid var(--n);}
+.profile.ter{border-top:4px solid var(--g);}
+.profile-icon{font-size:36px;margin-bottom:12px;}
+.profile h3{font-size:18px;font-weight:700;margin-bottom:8px;}
+.profile p{font-size:12px;color:var(--s);line-height:1.65;}
+.profile-freq{display:inline-block;margin-top:10px;background:var(--l);padding:4px 12px;border-radius:12px;font-size:10px;font-weight:600;color:var(--gd);}
+
+/* WHAT YOU GET */
+.results{background:var(--l);}
+.result-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;max-width:1000px;}
+.centered .result-grid{margin:0 auto;}
+.result-item{background:var(--w);border-radius:12px;padding:22px 20px;text-align:center;border:1px solid #E2E8F0;}
+.result-item .ri-icon{font-size:24px;margin-bottom:8px;}
+.result-item h4{font-size:13px;font-weight:700;color:var(--n);margin-bottom:4px;}
+.result-item p{font-size:11px;color:var(--s);line-height:1.5;}
+
+/* PRICING */
+.pricing{max-width:900px;margin:0 auto;}
+.plan-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+@media(max-width:768px){.plan-grid{grid-template-columns:1fr;}}
+.plan{border:2px solid #E2E8F0;border-radius:16px;padding:32px 24px;text-align:center;position:relative;transition:all 0.2s;}
+.plan:hover{transform:translateY(-4px);box-shadow:0 12px 30px rgba(0,0,0,0.06);}
+.plan.featured{border-color:var(--g);background:rgba(0,200,150,0.02);}
+.plan-badge{position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--g);color:var(--n);font-size:10px;font-weight:800;padding:4px 16px;border-radius:12px;letter-spacing:0.5px;}
+.plan-name{font-size:14px;font-weight:700;color:var(--s);text-transform:uppercase;letter-spacing:1px;margin-bottom:12px;}
+.plan-price{font-size:36px;font-weight:900;color:var(--n);line-height:1;margin-bottom:4px;}
+.plan-price span{font-size:14px;font-weight:500;color:var(--s);}
+.plan-period{font-size:11px;color:var(--s);margin-bottom:20px;}
+.plan-features{text-align:left;margin-bottom:20px;}
+.plan-feature{display:flex;align-items:flex-start;gap:8px;margin-bottom:8px;font-size:12px;color:var(--s);}
+.plan-feature .check{color:var(--g);font-weight:700;flex-shrink:0;}
+.plan-feature.locked{opacity:0.4;}
+.plan-feature.locked .check{color:#ccc;}
+.plan-btn{display:block;width:100%;padding:12px;border-radius:8px;font-size:13px;font-weight:700;border:none;cursor:pointer;transition:all 0.2s;text-align:center;}
+.plan-btn.primary{background:var(--g);color:var(--n);}
+.plan-btn.primary:hover{background:var(--gd);}
+.plan-btn.outline{background:transparent;border:2px solid #E2E8F0;color:var(--s);}
+.plan-btn.disabled{background:var(--l);color:#aaa;cursor:default;}
+.plan-or{font-size:11px;color:var(--s);margin-top:8px;}
+
+/* TRUST */
+.trust-bar{background:var(--l);padding:40px 6%;text-align:center;}
+.trust-items{display:flex;justify-content:center;gap:40px;flex-wrap:wrap;}
+.trust-item{font-size:12px;color:var(--s);display:flex;align-items:center;gap:8px;}
+.trust-item .ti{color:var(--g);font-weight:700;}
+
+/* CTA */
+.cta-section{background:linear-gradient(160deg,var(--n),var(--n2));text-align:center;padding:80px 6%;}
+.cta-section h2{font-size:clamp(24px,4vw,40px);font-weight:900;color:#fff;margin-bottom:14px;line-height:1.2;}
+.cta-section p{font-size:16px;color:rgba(255,255,255,0.45);margin-bottom:32px;}
+.cta-btn{display:inline-block;background:var(--g);color:var(--n);padding:16px 44px;border-radius:10px;font-size:17px;font-weight:800;transition:all 0.25s;box-shadow:0 4px 20px rgba(0,200,150,0.25);}
+.cta-btn:hover{background:var(--gd);transform:translateY(-2px);}
+
+/* FOOTER */
+footer{background:var(--n);border-top:1px solid rgba(255,255,255,0.05);padding:28px 6%;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;}
+footer p{font-size:11px;color:var(--s);}
+footer a{color:var(--g);font-size:11px;}
 </style>
 </head>
 <body>
-<div class="topbar"></div>
-<div class="page">
-  <header>
-    <div class="logo-block">
-      <div class="logo">LOGI<span>FLO</span>.IO</div>
-      <div class="tagline">Plateforme d'Intelligence Logistique &amp; Financière pour PME</div>
+
+<nav>
+  <div class="nav-logo">LOGIFLO<span>.IO</span></div>
+  <div class="nav-links">
+    <a href="#probleme">Le probleme</a>
+    <a href="#solution">Solution</a>
+    <a href="#profils">Profils</a>
+    <a href="#pricing">Tarifs</a>
+    <a href="mailto:contact@logiflo.io" class="nav-cta">Audit gratuit</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-tag">Audit financier des stocks pour PME</div>
+  <h1>Votre stock cache du <em>cash</em>.<br>On vous dit <em>combien</em>.</h1>
+  <p>Deposez votre fichier d'inventaire. En 3 minutes, Logiflo identifie le capital qui dort, chiffre ce que ca coute, et vous dit quoi faire.</p>
+  <a href="mailto:contact@logiflo.io" class="hero-btn">Lancer mon audit gratuit</a>
+  <div class="hero-sub">Sans engagement · Sans installation · Un fichier Excel suffit</div>
+</section>
+
+<section id="probleme">
+  <div class="section-tag">Le probleme</div>
+  <div class="section-title">Personne ne sait ou dort le cash</div>
+  <div class="section-sub">Les PME ont des centaines de milliers d'euros immobilises dans leur stock sans le savoir. Et aucun outil accessible pour le voir.</div>
+  <div class="grid3">
+    <div class="card">
+      <div class="card-icon">💰</div>
+      <h3>Le stock coute cher</h3>
+      <p>Entre 18% et 50% de sa valeur chaque annee en stockage, assurance, manutention et obsolescence. La plupart des dirigeants l'ignorent.</p>
     </div>
-    <a href="https://app.logiflo.io" class="login-link">Se connecter</a>
-  </header>
-  <div class="divider"></div>
-  <div class="hero">
-    <h1>Votre Excel devient un <em>audit financier complet</em> en 3 minutes.<br>Sans consultant. Sans intégrateur.</h1>
-    <p>Les PME logistiques pilotent à l'aveugle. Logiflo transforme leurs données opérationnelles en diagnostic financier actionnable — scoring sectoriel, prédiction de rupture, rentabilité transport. Directement depuis un fichier Excel ou CSV.</p>
+    <div class="card">
+      <div class="card-icon">👻</div>
+      <h3>Le stock mort est invisible</h3>
+      <p>Des produits qui ne se vendent plus depuis des mois, voire des annees. Ils coutent de l'argent chaque jour mais personne ne les voit.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">🚫</div>
+      <h3>Pas d'outil pour les PME</h3>
+      <p>Les consultants SCM coutent des milliers d'euros. Les ERP avances sont pour les grands groupes. Reste Excel et le courage.</p>
+    </div>
   </div>
-  <div class="stitle">Ce que fait Logiflo</div>
-  <div class="modules">
-    <div class="mod"><span class="mod-icon">📦</span><div class="mod-title">Audit Stock</div><div class="mod-desc"><strong>Capital immobilisé · Ruptures · Stock dormant</strong><br>BFR chiffré · Prédiction rupture 4 semaines · Scoring 0–100</div></div>
-    <div class="mod"><span class="mod-icon">🚚</span><div class="mod-title">Audit Transport</div><div class="mod-desc"><strong>Marge nette par trajet · Trajets toxiques</strong><br>Coût/km vs CNR 2026 · Fuite de marge chiffrée · Mode auto-détecté</div></div>
-    <div class="mod"><span class="mod-icon">📊</span><div class="mod-title">Scoring Logiflo</div><div class="mod-desc"><strong>Score 0–100 sur 3 dimensions pondérées</strong><br>Historique · Benchmark sectoriel · PDF 5 pages · SMLA annuel</div></div>
+</section>
+
+<section id="solution" class="how centered">
+  <div class="section-tag">La solution</div>
+  <div class="section-title">3 minutes. Un fichier. Un plan d'action.</div>
+  <div class="section-sub">Pas d'integration logicielle. Pas de formation. Pas de template impose. Votre fichier Excel ou CSV suffit.</div>
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">1</div>
+      <h4>Deposez votre fichier</h4>
+      <p>Excel ou CSV, en francais ou en anglais. L'algorithme detecte automatiquement la structure de vos colonnes.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <h4>L'IA analyse</h4>
+      <p>Chaque article est classe : sain, surstock, mort, en rupture. Capital chiffre, simulations de scenarios, benchmarks sectoriels.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <h4>Agissez</h4>
+      <p>5 actions concretes avec references exactes et montants. Un rapport PDF pret pour le comite de direction.</p>
+    </div>
   </div>
-  <div class="kpis">
-    <div class="kpi"><span class="kpi-v">65 000</span><span class="kpi-l">PME transport &amp;<br>logistique en France</span></div>
-    <div class="kpi"><span class="kpi-v">3 min</span><span class="kpi-l">Excel → audit<br>financier complet</span></div>
-    <div class="kpi"><span class="kpi-v">0 EUR</span><span class="kpi-l">Pour tester<br>(audit gratuit)</span></div>
-    <div class="kpi"><span class="kpi-v">16</span><span class="kpi-l">Secteurs avec<br>benchmarks intégrés</span></div>
+</section>
+
+<section class="results centered">
+  <div class="section-tag">Ce que vous obtenez</div>
+  <div class="section-title">Un audit de consultant en 3 minutes</div>
+  <div class="section-sub">Tout ce qu'un consultant SCM a 700 EUR/jour livre en 3 jours, Logiflo le fait automatiquement.</div>
+  <div class="result-grid">
+    <div class="result-item"><div class="ri-icon">📊</div><h4>Capital immobilise</h4><p>Chiffre en euros avec decomposition : sain, mort, surstock</p></div>
+    <div class="result-item"><div class="ri-icon">💀</div><h4>Stock mort identifie</h4><p>Articles sans mouvement, chiffres, avec scenarios de liquidation</p></div>
+    <div class="result-item"><div class="ri-icon">📦</div><h4>Surstock quantifie</h4><p>Couverture par article vs norme sectorielle</p></div>
+    <div class="result-item"><div class="ri-icon">🔴</div><h4>Ruptures detectees</h4><p>Actuelles et imminentes avec cout du CA perdu</p></div>
+    <div class="result-item"><div class="ri-icon">🏭</div><h4>Benchmarks sectoriels</h4><p>16 secteurs calibres. Vos KPIs vs les normes du marche</p></div>
+    <div class="result-item"><div class="ri-icon">🎯</div><h4>5 actions chiffrees</h4><p>Reference exacte + montant + verbe d'action</p></div>
+    <div class="result-item"><div class="ri-icon">📉</div><h4>Cout de l'inaction</h4><p>Ce que ca coute de ne rien faire pendant 90 jours</p></div>
+    <div class="result-item"><div class="ri-icon">📄</div><h4>Rapport PDF pro</h4><p>Pret a presenter en CODIR ou a envoyer a un investisseur</p></div>
   </div>
-  <div class="why">
-    <div class="stitle">Pourquoi maintenant</div>
-    <ul class="why-list">
-      <li>Coûts logistiques en hausse de <strong>+10 à +15% en Europe</strong> en 2025 — les PME absorbent sans visibilité (Baromètre Kyu, 500 directeurs SC)</li>
-      <li><strong>64% des industriels</strong> ont réorganisé leur supply chain sans savoir ce que ça leur a coûté ou économisé (Rapport Alpega 2026)</li>
-      <li>Aucun outil accessible &lt; 500 EUR/mois avec <strong>benchmarks CNR/IRU/IATA intégrés et scoring propriétaire</strong> pour PME logistiques</li>
-    </ul>
+</section>
+
+<section id="profils">
+  <div class="section-tag">Deux profils</div>
+  <div class="section-title">Le meme stock, deux lectures</div>
+  <div class="section-sub">Logiflo adapte son langage a votre metier. Le meme fichier produit deux analyses differentes.</div>
+  <div class="profiles">
+    <div class="profile mgr">
+      <div class="profile-icon">📊</div>
+      <h3>Manager / DAF</h3>
+      <p>Parle en euros, cout de possession, BFR. Voit les simulations de scenarios, le scoring, les benchmarks sectoriels. Recoit un rapport PDF pret pour le comite de direction.</p>
+      <span class="profile-freq">Usage mensuel ou trimestriel</span>
+    </div>
+    <div class="profile ter">
+      <div class="profile-icon">📋</div>
+      <h3>Terrain / Entrepot</h3>
+      <p>Parle en unites, urgences, actions du jour. Voit les reappros a passer, les comptages prioritaires, les articles qui dorment. La todo list de l'entrepot.</p>
+      <span class="profile-freq">Usage hebdomadaire · 52x par an</span>
+    </div>
   </div>
-  <div class="stitle">Offres</div>
-  <div class="plans">
-    <div class="plan free"><div class="plan-name">Gratuit</div><div class="plan-price">0 EUR</div><div class="plan-desc">1 audit/semaine<br>Sans compte<br>Rapport tronqué (30%)</div></div>
-    <div class="plan start"><div class="plan-name">Starter</div><div class="plan-price">290 EUR/mois</div><div class="plan-desc">3 audits/mois · 1 module<br>1 login Manager<br>PDF complet</div></div>
-    <div class="plan biz"><div class="plan-name">Business</div><div class="plan-price">490 EUR/mois</div><div class="plan-desc">Illimité · 2 modules<br>3 profils DAF/Terrain<br>Historique 6 mois</div></div>
-    <div class="plan expert"><div class="plan-name">Expert</div><div class="plan-price">Sur devis</div><div class="plan-desc">Multi-sites · API<br>4 niveaux · SMLA<br>En développement</div></div>
-  </div>
-  <div class="cta-bottom">
-    <div class="cta-bottom-title">Prêt à voir ce que vos données vous cachent ?</div>
-    <div class="cta-bottom-sub">3 minutes. Sans inscription. Sans engagement.</div>
-    <a href="https://app.logiflo.io/?page=audit_gratuit" class="cta-btn cta-primary" style="display:inline-flex;min-width:240px;">▶ Lancer mon audit gratuit</a>
-  </div>
-  <div class="contact">
-    <div><div class="contact-label">Fondateur</div><div class="contact-val">Éric Loboué</div></div>
-    <div><div class="contact-label">Email</div><div class="contact-val"><a href="mailto:contact@logiflo.io">contact@logiflo.io</a></div></div>
-    <div><div class="contact-label">App live</div><div class="contact-val"><a href="https://app.logiflo.io" target="_blank">app.logiflo.io</a></div></div>
-    <div><div class="contact-label">LinkedIn</div><div class="contact-val"><a href="https://linkedin.com/in/ericloboue" target="_blank">Éric Loboué</a></div></div>
+</section>
+
+<div class="trust-bar">
+  <div class="trust-items">
+    <div class="trust-item"><span class="ti">✓</span> Donnees traitees en memoire uniquement</div>
+    <div class="trust-item"><span class="ti">✓</span> Hebergement UE (Paris)</div>
+    <div class="trust-item"><span class="ti">✓</span> Conforme RGPD</div>
+    <div class="trust-item"><span class="ti">✓</span> Jamais revendu a des tiers</div>
   </div>
 </div>
-<div class="bottombar"></div>
+
+<section id="pricing" class="centered">
+  <div class="section-tag">Tarifs</div>
+  <div class="section-title">Choisissez votre formule</div>
+  <div class="section-sub">Le rapport prouve son propre ROI : le cash recuperable identifie rembourse l'abonnement.</div>
+  <div class="pricing">
+    <div class="plan-grid">
+      <div class="plan">
+        <div class="plan-name">Gratuit</div>
+        <div class="plan-price">0 <span>EUR</span></div>
+        <div class="plan-period">1 audit par email</div>
+        <div class="plan-features">
+          <div class="plan-feature"><span class="check">✓</span> Diagnostic operationnel</div>
+          <div class="plan-feature"><span class="check">✓</span> Diagnostic financier</div>
+          <div class="plan-feature locked"><span class="check">✗</span> Predictions de rupture</div>
+          <div class="plan-feature locked"><span class="check">✗</span> Top 5 actions chiffrees</div>
+          <div class="plan-feature locked"><span class="check">✗</span> Export PDF</div>
+          <div class="plan-feature locked"><span class="check">✗</span> Historique et suivi</div>
+        </div>
+        <a href="mailto:contact@logiflo.io" class="plan-btn outline">Essayer</a>
+      </div>
+      <div class="plan featured">
+        <div class="plan-badge">RECOMMANDE</div>
+        <div class="plan-name">Pro</div>
+        <div class="plan-price">590 <span>EUR/mois</span></div>
+        <div class="plan-period">Engagement 12 mois</div>
+        <div class="plan-features">
+          <div class="plan-feature"><span class="check">✓</span> Audits illimites</div>
+          <div class="plan-feature"><span class="check">✓</span> Analyse IA complete</div>
+          <div class="plan-feature"><span class="check">✓</span> Predictions de rupture</div>
+          <div class="plan-feature"><span class="check">✓</span> Top 5 actions chiffrees</div>
+          <div class="plan-feature"><span class="check">✓</span> Export PDF expert</div>
+          <div class="plan-feature"><span class="check">✓</span> Historique 12 mois</div>
+          <div class="plan-feature"><span class="check">✓</span> Scoring + Benchmarks</div>
+          <div class="plan-feature"><span class="check">✓</span> Profil Manager + Terrain</div>
+        </div>
+        <a href="mailto:contact@logiflo.io" class="plan-btn primary">Souscrire</a>
+        <div class="plan-or">ou 790 EUR en audit ponctuel sans engagement</div>
+      </div>
+      <div class="plan">
+        <div class="plan-name">Expert</div>
+        <div class="plan-price" style="font-size:24px;color:var(--s);">Bientot</div>
+        <div class="plan-period">En developpement</div>
+        <div class="plan-features">
+          <div class="plan-feature"><span class="check">✓</span> Tout le plan Pro</div>
+          <div class="plan-feature"><span class="check">✓</span> Multi-utilisateurs</div>
+          <div class="plan-feature"><span class="check">✓</span> API dediee</div>
+          <div class="plan-feature"><span class="check">✓</span> Integrations ERP</div>
+          <div class="plan-feature"><span class="check">✓</span> Multi-sites</div>
+        </div>
+        <a href="mailto:contact@logiflo.io" class="plan-btn disabled">Bientot disponible</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section">
+  <h2>Pret a voir ce que votre<br>stock vous cache ?</h2>
+  <p>Un audit gratuit, sans engagement, en 3 minutes.</p>
+  <a href="mailto:contact@logiflo.io" class="cta-btn">contact@logiflo.io</a>
+</section>
+
+<footer>
+  <p>© 2026 Logiflo B2B Enterprise — 16 rue Vacon, 13001 Marseille</p>
+  <a href="mailto:contact@logiflo.io">contact@logiflo.io</a>
+</footer>
+
 </body>
 </html>
